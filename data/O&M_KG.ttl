@@ -1,0 +1,1962 @@
+@prefix :      <http://10.60.38.181/> .
+@prefix container: <http://10.60.38.181/container/> .
+@prefix server: <http://10.60.38.181/server/> .
+@prefix pod:   <http://10.60.38.181/pod/> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix pod_rel: <http://10.60.38.181/pod_rel/> .
+@prefix server_rel: <http://10.60.38.181/server_rel/> .
+@prefix environment: <http://10.60.38.181/environment/> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix namespace_rel: <http://10.60.38.181/namespace_rel/> .
+@prefix service: <http://10.60.38.181/service/> .
+@prefix namespace: <http://10.60.38.181/namespace/> .
+@prefix container_rel: <http://10.60.38.181/container_rel/> .
+@prefix service_rel: <http://10.60.38.181/service_rel/> .
+@prefix environment_rel: <http://10.60.38.181/environment_rel/> .
+@prefix temp: <http://10.60.38.181/temp/> .
+
+temp:1
+        <http://10.60.38.181/pod_rel/labels/name>
+                "front-end" ;
+        <http://10.60.38.181/pod_rel/labels/pod-template-hash>
+                "858b4ff57" .
+
+pod:front-end-858b4ff57-dbdck
+        a                     :Pod ;
+        pod_rel:contains      container:front-end ;
+        pod_rel:deployed_in   server:192.168.199.32 ;
+        pod_rel:hostIP        "192.168.199.32" ;
+        pod_rel:labels        temp:2 ;
+        pod_rel:name          "front-end-858b4ff57-dbdck" ;
+        pod_rel:namespace     "sock-shop" ;
+        pod_rel:nodeName      "192.168.199.32" ;
+        pod_rel:nodeSelector  temp:3 ;
+        pod_rel:phase         "Running" ;
+        pod_rel:podIP         "172.20.2.5" ;
+        pod_rel:provides      service:front-end ;
+        pod_rel:qosClass      "BestEffort" ;
+        pod_rel:startTime     "2019-07-01T10:12:18Z" .
+				
+service:front-end-external  a          :Service ;
+        service_rel:annotations        temp:4 ;
+        service_rel:clusterIP          "10.68.46.40" ;
+        service_rel:creationTimestamp  "2019-07-01T10:12:19Z" ;
+        service_rel:labels             temp:5 ;
+        service_rel:name               "front-end-external" ;
+        service_rel:namespace          "sock-shop" ;
+        service_rel:ports              temp:6 ;
+        service_rel:resourceVersion    "841" ;
+        service_rel:selector           temp:7 ;
+        service_rel:type               "NodePort" .
+
+pod:shipping-65769d99d7-lmpg7
+        a                     :Pod ;
+        pod_rel:contains      container:shipping ;
+        pod_rel:deployed_in   server:192.168.199.34 ;
+        pod_rel:hostIP        "192.168.199.34" ;
+        pod_rel:labels        temp:8 ;
+        pod_rel:name          "shipping-65769d99d7-lmpg7" ;
+        pod_rel:namespace     "sock-shop" ;
+        pod_rel:nodeName      "192.168.199.34" ;
+        pod_rel:nodeSelector  temp:9 ;
+        pod_rel:phase         "Running" ;
+        pod_rel:podIP         "172.20.1.8" ;
+        pod_rel:provides      service:shipping ;
+        pod_rel:qosClass      "BestEffort" ;
+        pod_rel:startTime     "2019-07-01T10:12:22Z" .
+
+temp:10
+        <http://10.60.38.181/service_rel/ports/port>
+                "80" ;
+        <http://10.60.38.181/service_rel/ports/protocol>
+                "TCP" ;
+        <http://10.60.38.181/service_rel/ports/targetPort>
+                "80" .
+
+temp:11
+        <http://10.60.38.181/pod_rel/labels/name>
+                "orders" ;
+        <http://10.60.38.181/pod_rel/labels/pod-template-hash>
+                "6496fcd6f7" .
+
+temp:12
+        <http://10.60.38.181/container_rel/ports/containerPort>
+                "80" ;
+        <http://10.60.38.181/container_rel/ports/protocol>
+                "TCP" .
+
+temp:13
+        <http://10.60.38.181/service_rel/ports/port>
+                "80" ;
+        <http://10.60.38.181/service_rel/ports/protocol>
+                "TCP" ;
+        <http://10.60.38.181/service_rel/ports/targetPort>
+                "80" .
+
+temp:14
+        <http://10.60.38.181/pod_rel/nodeSelector/beta.kubernetes.io-os>
+                "linux" .
+
+temp:15
+        <http://10.60.38.181/container_rel/ports/curstate>
+                "running" ;
+        <http://10.60.38.181/container_rel/ports/startedAt>
+                "2019-07-01T10:14:54Z" .
+
+temp:16
+        <http://10.60.38.181/container_rel/ports/containerPort>
+                "80" ;
+        <http://10.60.38.181/container_rel/ports/protocol>
+                "TCP" .
+
+temp:17
+        <http://10.60.38.181/pod_rel/nodeSelector/beta.kubernetes.io-os>
+                "linux" .
+
+temp:18
+        <http://10.60.38.181/service_rel/annotations/kubectl.kubernetes.io/last-applied-configuration>
+                "{\\\"apiVersion\\\":\\\"v1\\\",\\\"kind\\\":\\\"Service\\\",\\\"metadata\\\":{\\\"annotations\\\":{},\\\"labels\\\":{\\\"k8s-app\\\":\\\"sock-shop\\\",\\\"name\\\":\\\"payment\\\"},\\\"name\\\":\\\"payment\\\",\\\"namespace\\\":\\\"sock-shop\\\"},\\\"spec\\\":{\\\"ports\\\":[{\\\"name\\\":\\\"sock-port\\\",\\\"port\\\":80,\\\"targetPort\\\":80}],\\\"selector\\\":{\\\"name\\\":\\\"payment\\\"}}}\n" .
+				
+service:user-db  a					   :Service ;
+        service_rel:annotations        temp:19 ;
+        service_rel:clusterIP          "10.68.89.108" ;
+        service_rel:creationTimestamp  "2019-07-01T10:12:23Z" ;
+        service_rel:labels             temp:20 ;
+        service_rel:name               "user-db" ;
+        service_rel:namespace          "sock-shop" ;
+        service_rel:ports              temp:21 ;
+        service_rel:resourceVersion    "1005" ;
+        service_rel:selector           temp:22 ;
+        service_rel:type               "ClusterIP" .
+
+temp:6
+        <http://10.60.38.181/service_rel/ports/port>
+                "80" ;
+        <http://10.60.38.181/service_rel/ports/protocol>
+                "TCP" ;
+        <http://10.60.38.181/service_rel/ports/targetPort>
+                "8079" .
+
+temp:23
+        <http://10.60.38.181/container_rel/ports/containerPort>
+                "8079" ;
+        <http://10.60.38.181/container_rel/ports/protocol>
+                "TCP" .
+
+temp:24
+        <http://10.60.38.181/server_rel/condition_PIDPressure/lastHeartbeatTime>
+                "2019-07-02T13:44:55Z" ;
+        <http://10.60.38.181/server_rel/condition_PIDPressure/lastTransitionTime>
+                "2019-07-02T12:34:56Z" ;
+        <http://10.60.38.181/server_rel/condition_PIDPressure/message>
+                "kubelet has sufficient PID available" ;
+        <http://10.60.38.181/server_rel/condition_PIDPressure/reason>
+                "KubeletHasSufficientPID" ;
+        <http://10.60.38.181/server_rel/condition_PIDPressure/status>
+                "False" .
+
+pod_rel:contains  a  owl:ObjectProperty ;
+        rdfs:domain  :Pod ;
+        rdfs:range   :Container .
+
+temp:25
+        <http://10.60.38.181/service_rel/annotations/kubectl.kubernetes.io/last-applied-configuration>
+                "{\\\"apiVersion\\\":\\\"v1\\\",\\\"kind\\\":\\\"Service\\\",\\\"metadata\\\":{\\\"annotations\\\":{},\\\"labels\\\":{\\\"k8s-app\\\":\\\"sock-shop\\\",\\\"name\\\":\\\"rabbitmq\\\"},\\\"name\\\":\\\"rabbitmq\\\",\\\"namespace\\\":\\\"sock-shop\\\"},\\\"spec\\\":{\\\"ports\\\":[{\\\"name\\\":\\\"rabbitmq\\\",\\\"port\\\":5672,\\\"targetPort\\\":5672},{\\\"name\\\":\\\"rabbitmq-mangement\\\",\\\"port\\\":15672,\\\"targetPort\\\":15672}],\\\"selector\\\":{\\\"name\\\":\\\"rabbitmq\\\"}}}\n" .
+
+temp:26
+        <http://10.60.38.181/service_rel/annotations/kubectl.kubernetes.io/last-applied-configuration>
+                "{\\\"apiVersion\\\":\\\"v1\\\",\\\"kind\\\":\\\"Service\\\",\\\"metadata\\\":{\\\"annotations\\\":{},\\\"labels\\\":{\\\"k8s-app\\\":\\\"sock-shop\\\",\\\"name\\\":\\\"orders-db\\\"},\\\"name\\\":\\\"orders-db\\\",\\\"namespace\\\":\\\"sock-shop\\\"},\\\"spec\\\":{\\\"ports\\\":[{\\\"port\\\":27017,\\\"targetPort\\\":27017}],\\\"selector\\\":{\\\"name\\\":\\\"orders-db\\\"}}}\n" .
+
+temp:27
+        <http://10.60.38.181/server_rel/condition_PIDPressure/lastHeartbeatTime>
+                "2019-07-02T13:44:49Z" ;
+        <http://10.60.38.181/server_rel/condition_PIDPressure/lastTransitionTime>
+                "2019-07-01T10:09:36Z" ;
+        <http://10.60.38.181/server_rel/condition_PIDPressure/message>
+                "kubelet is posting ready status. AppArmor enabled" ;
+        <http://10.60.38.181/server_rel/condition_PIDPressure/reason>
+                "KubeletReady" ;
+        <http://10.60.38.181/server_rel/condition_PIDPressure/status>
+                "True" .
+
+temp:28
+        <http://10.60.38.181/server_rel/condition_PIDPressure/lastHeartbeatTime>
+                "2019-07-02T13:44:50Z" ;
+        <http://10.60.38.181/server_rel/condition_PIDPressure/lastTransitionTime>
+                "2019-07-02T12:34:55Z" ;
+        <http://10.60.38.181/server_rel/condition_PIDPressure/message>
+                "kubelet has no disk pressure" ;
+        <http://10.60.38.181/server_rel/condition_PIDPressure/reason>
+                "KubeletHasNoDiskPressure" ;
+        <http://10.60.38.181/server_rel/condition_PIDPressure/status>
+                "False" .
+
+server:192.168.199.33
+        a                             :Server ;
+        server_rel:annotations        temp:29 ;
+        server_rel:condition_DiskPressure
+                temp:30 ;
+        server_rel:condition_MemoryPressure
+                temp:31 ;
+        server_rel:condition_PIDPressure
+                temp:32 ;
+        server_rel:condition_Ready    temp:33 ;
+        server_rel:creationTimestamp  "2019-07-01T10:10:15Z" ;
+        server_rel:labels             temp:34 ;
+        server_rel:name               "192.168.199.33" ;
+        server_rel:podCIDR            "172.20.4.0/24" .
+
+service:catalogue  a                   :Service ;
+        service_rel:annotations        temp:35 ;
+        service_rel:clusterIP          "10.68.154.222" ;
+        service_rel:creationTimestamp  "2019-07-01T10:12:18Z" ;
+        service_rel:labels             temp:36 ;
+        service_rel:name               "catalogue" ;
+        service_rel:namespace          "sock-shop" ;
+        service_rel:ports              temp:37 ;
+        service_rel:resourceVersion    "804" ;
+        service_rel:selector           temp:38 ;
+        service_rel:type               "ClusterIP" .
+
+temp:39
+        <http://10.60.38.181/service_rel/selector/name>
+                "session-db" .
+
+temp:36
+        <http://10.60.38.181/service_rel/labels/name>
+                "catalogue" .
+
+temp:42
+        <http://10.60.38.181/pod_rel/nodeSelector/beta.kubernetes.io-os>
+                "linux" .
+
+pod:front-end-858b4ff57-6md46
+        a                     :Pod ;
+        pod_rel:contains      container:front-end ;
+        pod_rel:deployed_in   server:192.168.199.33 ;
+        pod_rel:hostIP        "192.168.199.33" ;
+        pod_rel:labels        temp:40 ;
+        pod_rel:name          "front-end-858b4ff57-6md46" ;
+        pod_rel:namespace     "sock-shop" ;
+        pod_rel:nodeName      "192.168.199.33" ;
+        pod_rel:nodeSelector  temp:41 ;
+        pod_rel:phase         "Running" ;
+        pod_rel:podIP         "172.20.4.5" ;
+        pod_rel:provides      service:front-end ;
+        pod_rel:qosClass      "BestEffort" ;
+        pod_rel:startTime     "2019-07-01T10:12:20Z" .
+
+service:queue-master  a                :Service ;
+        service_rel:annotations        temp:43 ;
+        service_rel:clusterIP          "10.68.62.166" ;
+        service_rel:creationTimestamp  "2019-07-01T10:12:21Z" ;
+        service_rel:labels             temp:44 ;
+        service_rel:name               "queue-master" ;
+        service_rel:namespace          "sock-shop" ;
+        service_rel:ports              temp:45 ;
+        service_rel:resourceVersion    "939" ;
+        service_rel:selector           temp:46 ;
+        service_rel:type               "ClusterIP" .
+
+temp:47
+        <http://10.60.38.181/container_rel/ports/curstate>
+                "running" ;
+        <http://10.60.38.181/container_rel/ports/startedAt>
+                "2019-07-01T10:14:53Z" .
+
+temp:19
+        <http://10.60.38.181/service_rel/annotations/kubectl.kubernetes.io/last-applied-configuration>
+                "{\\\"apiVersion\\\":\\\"v1\\\",\\\"kind\\\":\\\"Service\\\",\\\"metadata\\\":{\\\"annotations\\\":{},\\\"labels\\\":{\\\"k8s-app\\\":\\\"sock-shop\\\",\\\"name\\\":\\\"user-db\\\"},\\\"name\\\":\\\"user-db\\\",\\\"namespace\\\":\\\"sock-shop\\\"},\\\"spec\\\":{\\\"ports\\\":[{\\\"port\\\":27017,\\\"targetPort\\\":27017}],\\\"selector\\\":{\\\"name\\\":\\\"user-db\\\"}}}\n" .
+				
+container:catalogue-db  a           :Container ;
+        container_rel:containerID   "docker://afc54613b21ed004e162eacdd4170b8e930d828e8062cc78ae754f5b45d3dfb9" ;
+        container_rel:image         "weaveworksdemos/catalogue-db:0.3.0" ;
+        container_rel:imageID       "docker-pullable://weaveworksdemos/catalogue-db@sha256:7ba74ec9adf88f6625b8d85d3323d1ee5232b39877e1590021ea485cf9457251" ;
+        container_rel:name          "catalogue-db" ;
+        container_rel:ports         temp:48 , temp:49 ;
+        container_rel:ready         "true" ;
+        container_rel:restartCount  "0" .
+
+environment:kubernetes
+        environment_rel:has
+                server:192.168.199.31 , server:192.168.199.32 , server:192.168.199.33 , server:192.168.199.34 , server:192.168.199.35 ;
+        environment_rel:name
+                "kubernetes" .
+
+service:shipping  a                    :Service ;
+        service_rel:annotations        temp:50 ;
+        service_rel:clusterIP          "10.68.143.246" ;
+        service_rel:creationTimestamp  "2019-07-01T10:12:22Z" ;
+        service_rel:labels             temp:51 ;
+        service_rel:name               "shipping" ;
+        service_rel:namespace          "sock-shop" ;
+        service_rel:ports              temp:10 ;
+        service_rel:resourceVersion    "990" ;
+        service_rel:selector           temp:52 ;
+        service_rel:type               "ClusterIP" .
+
+temp:53
+        <http://10.60.38.181/pod_rel/labels/name>
+                "user-db" ;
+        <http://10.60.38.181/pod_rel/labels/pod-template-hash>
+                "6ccbdb454c" .
+
+temp:54
+        <http://10.60.38.181/pod_rel/labels/name>
+                "payment" ;
+        <http://10.60.38.181/pod_rel/labels/pod-template-hash>
+                "6c698f689b" .
+
+temp:7
+        <http://10.60.38.181/service_rel/selector/name>
+                "front-end" .
+
+temp:55
+        <http://10.60.38.181/pod_rel/nodeSelector/beta.kubernetes.io-os>
+                "linux" .
+
+temp:56
+        <http://10.60.38.181/service_rel/annotations/kubectl.kubernetes.io/last-applied-configuration>
+                "{\\\"apiVersion\\\":\\\"v1\\\",\\\"kind\\\":\\\"Service\\\",\\\"metadata\\\":{\\\"annotations\\\":{},\\\"labels\\\":{\\\"k8s-app\\\":\\\"sock-shop\\\",\\\"name\\\":\\\"front-end\\\"},\\\"name\\\":\\\"front-end\\\",\\\"namespace\\\":\\\"sock-shop\\\"},\\\"spec\\\":{\\\"ports\\\":[{\\\"name\\\":\\\"sock-port\\\",\\\"port\\\":80,\\\"protocol\\\":\\\"TCP\\\",\\\"targetPort\\\":8079}],\\\"selector\\\":{\\\"name\\\":\\\"front-end\\\"},\\\"type\\\":\\\"LoadBalancer\\\"}}\n" .
+
+container:carts-db  a               :Container ;
+        container_rel:containerID   "docker://9885ce70a031e7f0ea5afcda2329e88cb966f1841bb403e79aa7a11a10acde6c" ;
+        container_rel:image         "mongo" ;
+        container_rel:imageID       "docker-pullable://mongo@sha256:01dc9fb0b7aae875678047e2d8550beb6fc34b7e76c60a1e7d7048f6700dead0" ;
+        container_rel:name          "carts-db" ;
+        container_rel:ports         temp:57 , temp:58 ;
+        container_rel:ready         "true" ;
+        container_rel:restartCount  "0" .
+
+container:orders  a                 :Container ;
+        container_rel:containerID   "docker://0bead271be63ed6a0d99128c1ebca0c92756bf224c1a4f77b07bf95b1c5179bf" , "docker://a1a3f1665fb4158ad222c69f1b1c0aebc75604b728f9fbc9246925f70fba9bbb" , "docker://cd9e93dc69032adb392a083b5496acf24003fd55934d868c0b56a2214c60016a" , "docker://a2d7853204ce8b0555430400ec273a0d8f75888c201aeff1780cb16e001e8f4a" , "docker://3e8a99cc221170449703dbdaeeef3b929dc4f5eee478fb4cda392e6599ca07ac" ;
+        container_rel:image         "weaveworksdemos/orders:0.4.7" ;
+        container_rel:imageID       "docker-pullable://weaveworksdemos/orders@sha256:b622e40e83433baf6374f15e076b53893f79958640fc6667dff597622eff03b9" ;
+        container_rel:name          "orders" ;
+        container_rel:ports         temp:59 , temp:60 , temp:61 , temp:62 , temp:12 , temp:63 , temp:64 , temp:65 , temp:66 , temp:67 ;
+        container_rel:ready         "true" ;
+        container_rel:restartCount  "0" .
+
+temp:49
+        <http://10.60.38.181/container_rel/ports/curstate>
+                "running" ;
+        <http://10.60.38.181/container_rel/ports/startedAt>
+                "2019-07-01T10:16:04Z" .
+
+service:carts  a                       :Service ;
+        service_rel:annotations        temp:68 ;
+        service_rel:clusterIP          "10.68.108.187" ;
+        service_rel:creationTimestamp  "2019-07-01T10:12:17Z" ;
+        service_rel:labels             temp:69 ;
+        service_rel:name               "carts" ;
+        service_rel:namespace          "sock-shop" ;
+        service_rel:ports              temp:13 ;
+        service_rel:resourceVersion    "770" ;
+        service_rel:selector           temp:70 ;
+        service_rel:type               "ClusterIP" .
+
+temp:71
+        <http://10.60.38.181/server_rel/condition_MemoryPressure/lastHeartbeatTime>
+                "2019-07-02T13:44:55Z" ;
+        <http://10.60.38.181/server_rel/condition_MemoryPressure/lastTransitionTime>
+                "2019-07-02T12:34:56Z" ;
+        <http://10.60.38.181/server_rel/condition_MemoryPressure/message>
+                "kubelet has sufficient memory available" ;
+        <http://10.60.38.181/server_rel/condition_MemoryPressure/reason>
+                "KubeletHasSufficientMemory" ;
+        <http://10.60.38.181/server_rel/condition_MemoryPressure/status>
+                "False" .
+
+service:front-end  a                   :Service ;
+        service_rel:annotations        temp:56 ;
+        service_rel:clusterIP          "10.68.20.190" ;
+        service_rel:creationTimestamp  "2019-07-01T10:12:19Z" ;
+        service_rel:labels             temp:72 ;
+        service_rel:name               "front-end" ;
+        service_rel:namespace          "sock-shop" ;
+        service_rel:ports              temp:73 ;
+        service_rel:resourceVersion    "846" ;
+        service_rel:selector           temp:74 ;
+        service_rel:type               "LoadBalancer" .
+
+pod:user-d4cb47c5f-8srcb
+        a                     :Pod ;
+        pod_rel:contains      container:user ;
+        pod_rel:deployed_in   server:192.168.199.33 ;
+        pod_rel:hostIP        "192.168.199.33" ;
+        pod_rel:labels        temp:75 ;
+        pod_rel:name          "user-d4cb47c5f-8srcb" ;
+        pod_rel:namespace     "sock-shop" ;
+        pod_rel:nodeName      "192.168.199.33" ;
+        pod_rel:nodeSelector  temp:76 ;
+        pod_rel:phase         "Running" ;
+        pod_rel:podIP         "172.20.4.21" ;
+        pod_rel:provides      service:user ;
+        pod_rel:qosClass      "BestEffort" ;
+        pod_rel:startTime     "2019-07-02T12:35:00Z" .
+
+pod:orders-6496fcd6f7-zt6zq
+        a                     :Pod ;
+        pod_rel:contains      container:orders ;
+        pod_rel:deployed_in   server:192.168.199.32 ;
+        pod_rel:hostIP        "192.168.199.32" ;
+        pod_rel:labels        temp:77 ;
+        pod_rel:name          "orders-6496fcd6f7-zt6zq" ;
+        pod_rel:namespace     "sock-shop" ;
+        pod_rel:nodeName      "192.168.199.32" ;
+        pod_rel:nodeSelector  temp:17 ;
+        pod_rel:phase         "Running" ;
+        pod_rel:podIP         "172.20.2.14" ;
+        pod_rel:provides      service:orders ;
+        pod_rel:qosClass      "BestEffort" ;
+        pod_rel:startTime     "2019-07-02T12:35:01Z" .
+
+pod:rabbitmq-6cf767fcc4-9j5vn
+        a                     :Pod ;
+        pod_rel:contains      container:rabbitmq ;
+        pod_rel:deployed_in   server:192.168.199.34 ;
+        pod_rel:hostIP        "192.168.199.34" ;
+        pod_rel:labels        temp:78 ;
+        pod_rel:name          "rabbitmq-6cf767fcc4-9j5vn" ;
+        pod_rel:namespace     "sock-shop" ;
+        pod_rel:nodeName      "192.168.199.34" ;
+        pod_rel:nodeSelector  temp:79 ;
+        pod_rel:phase         "Running" ;
+        pod_rel:podIP         "172.20.1.7" ;
+        pod_rel:provides      service:rabbitmq ;
+        pod_rel:qosClass      "BestEffort" ;
+        pod_rel:startTime     "2019-07-01T10:12:21Z" .
+
+container:queue-master
+        a                           :Container ;
+        container_rel:containerID   "docker://15cce17614dfd9a53a12bc60e810678c7848b296d2b92216b1e066df4f65467c" ;
+        container_rel:image         "weaveworksdemos/queue-master:0.3.1" ;
+        container_rel:imageID       "docker-pullable://weaveworksdemos/queue-master@sha256:6292d3095f4c7aeed8d863527f8ef6d7a75d3128f20fc61e57f398c100142712" ;
+        container_rel:name          "queue-master" ;
+        container_rel:ports         temp:80 , temp:81 ;
+        container_rel:ready         "true" ;
+        container_rel:restartCount  "0" .
+
+temp:82
+        <http://10.60.38.181/server_rel/condition_MemoryPressure/lastHeartbeatTime>
+                "2019-07-02T13:44:52Z" ;
+        <http://10.60.38.181/server_rel/condition_MemoryPressure/lastTransitionTime>
+                "2019-07-02T12:34:58Z" ;
+        <http://10.60.38.181/server_rel/condition_MemoryPressure/message>
+                "kubelet has sufficient PID available" ;
+        <http://10.60.38.181/server_rel/condition_MemoryPressure/reason>
+                "KubeletHasSufficientPID" ;
+        <http://10.60.38.181/server_rel/condition_MemoryPressure/status>
+                "False" .
+
+temp:83
+        <http://10.60.38.181/service_rel/annotations/kubectl.kubernetes.io/last-applied-configuration>
+                "{\\\"apiVersion\\\":\\\"v1\\\",\\\"kind\\\":\\\"Service\\\",\\\"metadata\\\":{\\\"annotations\\\":{},\\\"labels\\\":{\\\"k8s-app\\\":\\\"sock-shop\\\",\\\"name\\\":\\\"catalogue-db\\\"},\\\"name\\\":\\\"catalogue-db\\\",\\\"namespace\\\":\\\"sock-shop\\\"},\\\"spec\\\":{\\\"ports\\\":[{\\\"port\\\":3306,\\\"targetPort\\\":3306}],\\\"selector\\\":{\\\"name\\\":\\\"catalogue-db\\\"}}}\n" .
+
+temp:43
+        <http://10.60.38.181/service_rel/annotations/kubectl.kubernetes.io/last-applied-configuration>
+                "{\\\"apiVersion\\\":\\\"v1\\\",\\\"kind\\\":\\\"Service\\\",\\\"metadata\\\":{\\\"annotations\\\":{\\\"prometheus.io/path\\\":\\\"/prometheus\\\"},\\\"labels\\\":{\\\"k8s-app\\\":\\\"sock-shop\\\",\\\"name\\\":\\\"queue-master\\\"},\\\"name\\\":\\\"queue-master\\\",\\\"namespace\\\":\\\"sock-shop\\\"},\\\"spec\\\":{\\\"ports\\\":[{\\\"port\\\":80,\\\"targetPort\\\":80}],\\\"selector\\\":{\\\"name\\\":\\\"queue-master\\\"}}}\n" .
+
+:Service  a   owl:Class .
+
+temp:84
+        <http://10.60.38.181/pod_rel/nodeSelector/beta.kubernetes.io-os>
+                "linux" .
+
+temp:85
+        <http://10.60.38.181/container_rel/ports/curstate>
+                "running" ;
+        <http://10.60.38.181/container_rel/ports/startedAt>
+                "2019-07-02T12:35:18Z" .
+
+pod:front-end-858b4ff57-lkm8b
+        a                     :Pod ;
+        pod_rel:contains      container:front-end ;
+        pod_rel:deployed_in   server:192.168.199.33 ;
+        pod_rel:hostIP        "192.168.199.33" ;
+        pod_rel:labels        temp:1 ;
+        pod_rel:name          "front-end-858b4ff57-lkm8b" ;
+        pod_rel:namespace     "sock-shop" ;
+        pod_rel:nodeName      "192.168.199.33" ;
+        pod_rel:nodeSelector  temp:86 ;
+        pod_rel:phase         "Running" ;
+        pod_rel:podIP         "172.20.4.20" ;
+        pod_rel:provides      service:front-end ;
+        pod_rel:qosClass      "BestEffort" ;
+        pod_rel:startTime     "2019-07-02T12:35:00Z" .
+				
+service:catalogue-db  a                :Service ;
+        service_rel:annotations        temp:83 ;
+        service_rel:clusterIP          "10.68.53.176" ;
+        service_rel:creationTimestamp  "2019-07-01T10:12:18Z" ;
+        service_rel:labels             temp:87 ;
+        service_rel:name               "catalogue-db" ;
+        service_rel:namespace          "sock-shop" ;
+        service_rel:ports              temp:88 ;
+        service_rel:resourceVersion    "788" ;
+        service_rel:selector           temp:89 ;
+        service_rel:type               "ClusterIP" .
+
+temp:88
+        <http://10.60.38.181/service_rel/ports/port>
+                "3306" ;
+        <http://10.60.38.181/service_rel/ports/protocol>
+                "TCP" ;
+        <http://10.60.38.181/service_rel/ports/targetPort>
+                "3306" .
+
+temp:90
+        <http://10.60.38.181/server_rel/condition_Ready/lastHeartbeatTime>
+                "2019-07-02T13:44:50Z" ;
+        <http://10.60.38.181/server_rel/condition_Ready/lastTransitionTime>
+                "2019-07-02T12:34:55Z" ;
+        <http://10.60.38.181/server_rel/condition_Ready/message>
+                "kubelet is posting ready status. AppArmor enabled" ;
+        <http://10.60.38.181/server_rel/condition_Ready/reason>
+                "KubeletReady" ;
+        <http://10.60.38.181/server_rel/condition_Ready/status>
+                "True" .
+
+temp:91
+        <http://10.60.38.181/container_rel/ports/containerPort>
+                "80" ;
+        <http://10.60.38.181/container_rel/ports/protocol>
+                "TCP" .
+
+temp:92
+        <http://10.60.38.181/server_rel/labels/beta.kubernetes.io/arch>
+                "amd64" ;
+        <http://10.60.38.181/server_rel/labels/beta.kubernetes.io/os>
+                "linux" ;
+        <http://10.60.38.181/server_rel/labels/kubernetes.io/hostname>
+                "192.168.199.34" ;
+        <http://10.60.38.181/server_rel/labels/kubernetes.io/role>
+                "node" .
+
+temp:38
+        <http://10.60.38.181/service_rel/selector/name>
+                "catalogue" .
+
+temp:93
+        <http://10.60.38.181/pod_rel/labels/name>
+                "orders" ;
+        <http://10.60.38.181/pod_rel/labels/pod-template-hash>
+                "6496fcd6f7" .
+
+temp:94
+        <http://10.60.38.181/pod_rel/nodeSelector/beta.kubernetes.io-os>
+                "linux" .
+
+temp:48
+        <http://10.60.38.181/container_rel/ports/containerPort>
+                "3306" ;
+        <http://10.60.38.181/container_rel/ports/protocol>
+                "TCP" .
+
+temp:76
+        <http://10.60.38.181/pod_rel/nodeSelector/beta.kubernetes.io-os>
+                "linux" .
+
+temp:95
+        <http://10.60.38.181/service_rel/labels/name>
+                "rabbitmq" .
+
+temp:96
+        <http://10.60.38.181/service_rel/selector/name>
+                "orders" .
+
+temp:97
+        <http://10.60.38.181/pod_rel/nodeSelector/beta.kubernetes.io-os>
+                "linux" .
+
+temp:73
+        <http://10.60.38.181/service_rel/ports/port>
+                "80" ;
+        <http://10.60.38.181/service_rel/ports/protocol>
+                "TCP" ;
+        <http://10.60.38.181/service_rel/ports/targetPort>
+                "8079" .
+
+temp:98
+        <http://10.60.38.181/service_rel/labels/name>
+                "session-db" .
+
+temp:99
+        <http://10.60.38.181/pod_rel/nodeSelector/beta.kubernetes.io-os>
+                "linux" .
+
+temp:64
+        <http://10.60.38.181/container_rel/ports/curstate>
+                "running" ;
+        <http://10.60.38.181/container_rel/ports/startedAt>
+                "2019-07-01T10:17:48Z" .
+
+temp:61
+        <http://10.60.38.181/container_rel/ports/containerPort>
+                "80" ;
+        <http://10.60.38.181/container_rel/ports/protocol>
+                "TCP" .
+
+temp:100
+        <http://10.60.38.181/server_rel/condition_Ready/lastHeartbeatTime>
+                "2019-07-02T13:44:49Z" ;
+        <http://10.60.38.181/server_rel/condition_DiskPressure/lastTransitionTime>
+                "2019-07-01T10:09:35Z" ;
+        <http://10.60.38.181/server_rel/condition_DiskPressure/message>
+                "kubelet has no disk pressure" ;
+        <http://10.60.38.181/server_rel/condition_DiskPressure/reason>
+                "KubeletHasNoDiskPressure" ;
+        <http://10.60.38.181/server_rel/condition_DiskPressure/status>
+                "False" .
+
+temp:22
+        <http://10.60.38.181/service_rel/selector/name>
+                "user-db" .
+
+temp:101
+        <http://10.60.38.181/server_rel/condition_Ready/lastHeartbeatTime>
+                "2019-07-02T13:44:55Z" ;
+        <http://10.60.38.181/server_rel/condition_DiskPressure/lastTransitionTime>
+                "2019-07-02T12:34:56Z" ;
+        <http://10.60.38.181/server_rel/condition_DiskPressure/message>
+                "kubelet has no disk pressure" ;
+        <http://10.60.38.181/server_rel/condition_DiskPressure/reason>
+                "KubeletHasNoDiskPressure" ;
+        <http://10.60.38.181/server_rel/condition_DiskPressure/status>
+                "False" .
+				
+container:user-db
+        a                           :Container ;
+        container_rel:containerID   "docker://c2f836575711a0921a3db46387c04f2ccbbfa23553ab1ee6c547f902597d4753" ;
+        container_rel:image         "weaveworksdemos/user-db:0.3.0" ;
+        container_rel:imageID       "docker-pullable://weaveworksdemos/user-db@sha256:695bc22c11396c7ae747118c56e619f3b3295d9d4cbec999d30230b3f399a389" ;
+        container_rel:name          "user-db" ;
+        container_rel:ports         temp:102 , temp:103 ;
+        container_rel:ready         "true" ;
+        container_rel:restartCount  "0" .
+
+pod:user-db-6ccbdb454c-q9dxm
+        a                     :Pod ;
+        pod_rel:contains      container:user-db ;
+        pod_rel:deployed_in   server:192.168.199.32 ;
+        pod_rel:hostIP        "192.168.199.32" ;
+        pod_rel:labels        temp:53 ;
+        pod_rel:name          "user-db-6ccbdb454c-q9dxm" ;
+        pod_rel:namespace     "sock-shop" ;
+        pod_rel:nodeName      "192.168.199.32" ;
+        pod_rel:nodeSelector  temp:104 ;
+        pod_rel:phase         "Running" ;
+        pod_rel:podIP         "172.20.2.7" ;
+        pod_rel:provides      service:user-db ;
+        pod_rel:qosClass      "BestEffort" ;
+        pod_rel:startTime     "2019-07-01T10:12:23Z" .
+
+temp:105
+        <http://10.60.38.181/container_rel/ports/containerPort>
+                "8079" ;
+        <http://10.60.38.181/container_rel/ports/protocol>
+                "TCP" .
+
+temp:106
+        <http://10.60.38.181/container_rel/ports/containerPort>
+                "27017" ;
+        <http://10.60.38.181/container_rel/ports/protocol>
+                "TCP" .
+
+temp:37
+        <http://10.60.38.181/service_rel/ports/port>
+                "80" ;
+        <http://10.60.38.181/service_rel/ports/protocol>
+                "TCP" ;
+        <http://10.60.38.181/service_rel/ports/targetPort>
+                "80" .
+
+server:192.168.199.31
+        a                             :Server ;
+        server_rel:annotations        temp:107 ;
+        server_rel:condition_DiskPressure
+                temp:100 ;
+        server_rel:condition_MemoryPressure
+                temp:108 ;
+        server_rel:condition_PIDPressure
+                temp:109 ;
+        server_rel:condition_Ready    temp:27 ;
+        server_rel:creationTimestamp  "2019-07-01T10:09:35Z" ;
+        server_rel:labels             temp:110 ;
+        server_rel:name               "192.168.199.31" ;
+        server_rel:podCIDR            "172.20.0.0/24" .
+
+temp:111
+        <http://10.60.38.181/server_rel/condition_Ready/lastHeartbeatTime>
+                "2019-07-02T13:44:55Z" ;
+        <http://10.60.38.181/server_rel/condition_Ready/lastTransitionTime>
+                "2019-07-02T12:34:56Z" ;
+        <http://10.60.38.181/server_rel/condition_Ready/message>
+                "kubelet is posting ready status. AppArmor enabled" ;
+        <http://10.60.38.181/server_rel/condition_Ready/reason>
+                "KubeletReady" ;
+        <http://10.60.38.181/server_rel/condition_Ready/status>
+                "True" .
+
+namespace:monitoring  a           :Namespace ;
+        namespace_rel:name        "monitoring" ;
+        namespace_rel:supervises  namespace:sock-shop .
+
+temp:112
+        <http://10.60.38.181/pod_rel/labels/name>
+                "front-end" ;
+        <http://10.60.38.181/pod_rel/labels/pod-template-hash>
+                "858b4ff57" .
+
+temp:113
+        <http://10.60.38.181/service_rel/labels/name>
+                "orders" .
+
+temp:114
+        <http://10.60.38.181/pod_rel/nodeSelector/beta.kubernetes.io-os>
+                "linux" .
+
+temp:115
+        <http://10.60.38.181/container_rel/ports/curstate>
+                "running" ;
+        <http://10.60.38.181/container_rel/ports/startedAt>
+                "2019-07-01T10:18:30Z" .
+
+temp:116
+        <http://10.60.38.181/container_rel/ports/containerPort>
+                "80" ;
+        <http://10.60.38.181/container_rel/ports/protocol>
+                "TCP" .
+
+temp:117
+        <http://10.60.38.181/service_rel/selector/name>
+                "orders-db" .
+
+temp:118
+        <http://10.60.38.181/server_rel/labels/beta.kubernetes.io/arch>
+                "amd64" ;
+        <http://10.60.38.181/server_rel/labels/beta.kubernetes.io/os>
+                "linux" ;
+        <http://10.60.38.181/server_rel/labels/kubernetes.io/hostname>
+                "192.168.199.32" ;
+        <http://10.60.38.181/server_rel/labels/kubernetes.io/role>
+                "node" .
+
+temp:32
+        <http://10.60.38.181/server_rel/condition_PIDPressure/lastHeartbeatTime>
+                "2019-07-02T13:44:51Z" ;
+        <http://10.60.38.181/server_rel/condition_PIDPressure/lastTransitionTime>
+                "2019-07-02T12:34:58Z" ;
+        <http://10.60.38.181/server_rel/condition_PIDPressure/message>
+                "kubelet has sufficient PID available" ;
+        <http://10.60.38.181/server_rel/condition_PIDPressure/reason>
+                "KubeletHasSufficientPID" ;
+        <http://10.60.38.181/server_rel/condition_PIDPressure/status>
+                "False" .
+
+temp:30
+        <http://10.60.38.181/server_rel/condition_DiskPressure/lastHeartbeatTime>
+                "2019-07-02T13:44:51Z" ;
+        <http://10.60.38.181/server_rel/condition_DiskPressure/lastTransitionTime>
+                "2019-07-02T12:34:58Z" ;
+        <http://10.60.38.181/server_rel/condition_DiskPressure/message>
+                "kubelet has no disk pressure" ;
+        <http://10.60.38.181/server_rel/condition_DiskPressure/reason>
+                "KubeletHasNoDiskPressure" ;
+        <http://10.60.38.181/server_rel/condition_DiskPressure/status>
+                "False" .
+
+pod_rel:deployed_in  a  owl:ObjectProperty ;
+        rdfs:domain  :Pod ;
+        rdfs:range   :Server .
+
+temp:119
+        <http://pods/10.60.38.181/sock-shop/orders-6496fcd6f7-tw8sm/labels/name>
+                "orders" ;
+        <http://pods/10.60.38.181/sock-shop/orders-6496fcd6f7-tw8sm/labels/pod-template-hash>
+                "6496fcd6f7" .
+
+temp:120
+        <http://10.60.38.181/service_rel/ports/port>
+                "80" ;
+        <http://10.60.38.181/service_rel/ports/protocol>
+                "TCP" ;
+        <http://10.60.38.181/service_rel/ports/targetPort>
+                "80" .
+
+pod:orders-6496fcd6f7-fqnjt
+        a                     :Pod ;
+        pod_rel:contains      container:orders ;
+        pod_rel:deployed_in   server:192.168.199.33 ;
+        pod_rel:hostIP        "192.168.199.33" ;
+        pod_rel:labels        temp:121 ;
+        pod_rel:name          "orders-6496fcd6f7-fqnjt" ;
+        pod_rel:namespace     "sock-shop" ;
+        pod_rel:nodeName      "192.168.199.33" ;
+        pod_rel:nodeSelector  temp:122 ;
+        pod_rel:phase         "Running" ;
+        pod_rel:podIP         "172.20.4.16" ;
+        pod_rel:provides      service:orders ;
+        pod_rel:qosClass      "BestEffort" ;
+        pod_rel:startTime     "2019-07-02T12:35:01Z" .
+
+temp:40
+        <http://10.60.38.181/pod_rel/labels/name>
+                "front-end" ;
+        <http://10.60.38.181/pod_rel/labels/pod-template-hash>
+                "858b4ff57" .
+
+temp:123
+        <http://10.60.38.181/server_rel/condition_Ready/lastHeartbeatTime>
+                "2019-07-02T13:44:52Z" ;
+        <http://10.60.38.181/server_rel/condition_Ready/lastTransitionTime>
+                "2019-07-02T12:34:58Z" ;
+        <http://10.60.38.181/server_rel/condition_Ready/message>
+                "kubelet is posting ready status. AppArmor enabled" ;
+        <http://10.60.38.181/server_rel/condition_Ready/reason>
+                "KubeletReady" ;
+        <http://10.60.38.181/server_rel/condition_Ready/status>
+                "True" .
+
+temp:124
+        <http://10.60.38.181/service_rel/ports/port>
+                "5672" ;
+        <http://10.60.38.181/service_rel/ports/protocol>
+                "TCP" ;
+        <http://10.60.38.181/service_rel/ports/targetPort>
+                "5672" .
+
+temp:125
+        <http://10.60.38.181/service_rel/ports/port>
+                "80" ;
+        <http://10.60.38.181/service_rel/ports/protocol>
+                "TCP" ;
+        <http://10.60.38.181/service_rel/ports/targetPort>
+                "80" .
+
+temp:126
+        <http://10.60.38.181/container_rel/ports/curstate>
+                "running" ;
+        <http://10.60.38.181/container_rel/ports/startedAt>
+                "2019-07-01T10:15:53Z" .
+
+service:session-db  a                  :Service ;
+        service_rel:annotations        temp:127 ;
+        service_rel:clusterIP          "10.68.223.217" ;
+        service_rel:creationTimestamp  "2019-07-01T10:12:22Z" ;
+        service_rel:labels             temp:98 ;
+        service_rel:name               "session-db" ;
+        service_rel:namespace          "sock-shop" ;
+        service_rel:ports              temp:128 ;
+        service_rel:resourceVersion    "975" ;
+        service_rel:selector           temp:39 ;
+        service_rel:type               "ClusterIP" .
+
+temp:129
+        <http://10.60.38.181/container_rel/ports/curstate>
+                "running" ;
+        <http://10.60.38.181/container_rel/ports/startedAt>
+                "2019-07-02T12:36:27Z" .
+
+temp:130
+        <http://10.60.38.181/service_rel/ports/port>
+                "27017" ;
+        <http://10.60.38.181/service_rel/ports/protocol>
+                "TCP" ;
+        <http://10.60.38.181/service_rel/ports/targetPort>
+                "27017" .
+
+container:catalogue  a              :Container ;
+        container_rel:containerID   "docker://aa33cd3d47abdb90bc0648deec243ecb4d88cdeec927b06622f0268385c04e96" ;
+        container_rel:image         "weaveworksdemos/catalogue:0.3.5" ;
+        container_rel:imageID       "docker-pullable://weaveworksdemos/catalogue@sha256:0147a65b7116569439eefb1a6dbed455fe022464ef70e0c3cab75bc4a226b39b" ;
+        container_rel:name          "catalogue" ;
+        container_rel:ports         temp:16 , temp:131 ;
+        container_rel:ready         "true" ;
+        container_rel:restartCount  "0" .
+
+temp:132
+        <http://10.60.38.181/service_rel/selector/name>
+                "carts-db" .
+
+temp:80
+        <http://10.60.38.181/container_rel/ports/curstate>
+                "running" ;
+        <http://10.60.38.181/container_rel/ports/startedAt>
+                "2019-07-02T12:35:45Z" .
+
+temp:133
+        <http://10.60.38.181/container_rel/ports/containerPort>
+                "15672" ;
+        <http://10.60.38.181/container_rel/ports/protocol>
+                "TCP" .
+
+temp:31
+        <http://10.60.38.181/server_rel/condition_MemoryPressure/lastHeartbeatTime>
+                "2019-07-02T13:44:51Z" ;
+        <http://10.60.38.181/server_rel/condition_MemoryPressure/lastTransitionTime>
+                "2019-07-02T12:34:58Z" ;
+        <http://10.60.38.181/server_rel/condition_MemoryPressure/message>
+                "kubelet has sufficient memory available" ;
+        <http://10.60.38.181/server_rel/condition_MemoryPressure/reason>
+                "KubeletHasSufficientMemory" ;
+        <http://10.60.38.181/server_rel/condition_MemoryPressure/status>
+                "False" .
+
+temp:8
+        <http://10.60.38.181/pod_rel/labels/name>
+                "shipping" ;
+        <http://10.60.38.181/pod_rel/labels/pod-template-hash>
+                "65769d99d7" .
+
+namespace:sock-shop  a      :Namespace ;
+        namespace_rel:name  "sock-shop" .
+
+temp:29
+        <http://10.60.38.181/server_rel/annotations/flannel.alpha.coreos.com/backend-data>
+                "{\\\"VtepMAC\\\":\\\"32:ac:f6:67:1d:d8\\\"}" ;
+        <http://10.60.38.181/server_rel/annotations/flannel.alpha.coreos.com/backend-type>
+                "vxlan" ;
+        <http://10.60.38.181/server_rel/annotations/flannel.alpha.coreos.com/kube-subnet-manager>
+                "true" ;
+        <http://10.60.38.181/server_rel/annotations/flannel.alpha.coreos.com/public-ip>
+                "192.168.199.33" ;
+        <http://10.60.38.181/server_rel/annotations/node.alpha.kubernetes.io/ttl>
+                "0" ;
+        <http://10.60.38.181/server_rel/annotations/volumes.kubernetes.io/controller-managed-attach-detach>
+                "true" .
+
+container:shipping  a               :Container ;
+        container_rel:containerID   "docker://ba9d036299111b290fc2e3587a86047263b7c25edb43387520a43bf91c23c6dd" ;
+        container_rel:image         "weaveworksdemos/shipping:0.4.8" ;
+        container_rel:imageID       "docker-pullable://weaveworksdemos/shipping@sha256:983305c948fded487f4a4acdeab5f898e89d577b4bc1ca3de7750076469ccad4" ;
+        container_rel:name          "shipping" ;
+        container_rel:ports         temp:134 , temp:135 ;
+        container_rel:ready         "true" ;
+        container_rel:restartCount  "0" .
+
+temp:79
+        <http://10.60.38.181/pod_rel/nodeSelector/beta.kubernetes.io-os>
+                "linux" .
+
+temp:142
+        <http://10.60.38.181/container_rel/ports/containerPort>
+                "8079" ;
+        <http://10.60.38.181/container_rel/ports/protocol>
+                "TCP" .
+
+namespace_rel:supervises
+        a            owl:ObjectProperty ;
+        rdfs:domain  :Namespace ;
+        rdfs:range   :Namespace .
+
+temp:108
+        <http://10.60.38.181/server_rel/condition_MemoryPressure/lastHeartbeatTime>
+                "2019-07-02T13:44:49Z" ;
+        <http://10.60.38.181/server_rel/condition_MemoryPressure/lastTransitionTime>
+                "2019-07-01T10:09:35Z" ;
+        <http://10.60.38.181/server_rel/condition_MemoryPressure/message>
+                "kubelet has sufficient memory available" ;
+        <http://10.60.38.181/server_rel/condition_MemoryPressure/reason>
+                "KubeletHasSufficientMemory" ;
+        <http://10.60.38.181/server_rel/condition_MemoryPressure/status>
+                "False" .
+
+temp:161
+        <http://10.60.38.181/pod_rel/labels/name>
+                "orders-db" ;
+        <http://10.60.38.181/pod_rel/pod-template-hash>
+                "86f5c494b9" .
+
+pod:session-db-6b57d5cc79-gjxvb
+        a                     :Pod ;
+        pod_rel:contains      container:session-db ;
+        pod_rel:deployed_in   server:192.168.199.33 ;
+        pod_rel:hostIP        "192.168.199.33" ;
+        pod_rel:labels        temp:136 ;
+        pod_rel:name          "session-db-6b57d5cc79-gjxvb" ;
+        pod_rel:namespace     "sock-shop" ;
+        pod_rel:nodeName      "192.168.199.33" ;
+        pod_rel:nodeSelector  temp:97 ;
+        pod_rel:phase         "Running" ;
+        pod_rel:podIP         "172.20.4.8" ;
+        pod_rel:provides      service:session-db ;
+        pod_rel:qosClass      "BestEffort" ;
+        pod_rel:startTime     "2019-07-01T10:12:22Z" .
+
+temp:86
+        <http://10.60.38.181/pod_rel/nodeSelector/beta.kubernetes.io-os>
+                "linux" .
+
+temp:137
+        <http://10.60.38.181/service_rel/labels/name>
+                "carts-db" .
+
+temp:70
+        <http://10.60.38.181/service_rel/selector/name>
+                "carts" .
+
+temp:138
+        <http://10.60.38.181/server_rel/condition_PIDPressure/lastHeartbeatTime>
+                "2019-07-02T13:44:50Z" ;
+        <http://10.60.38.181/server_rel/condition_PIDPressure/lastTransitionTime>
+                "2019-07-02T12:34:55Z" ;
+        <http://10.60.38.181/server_rel/condition_PIDPressure/message>
+                "kubelet has sufficient PID available" ;
+        <http://10.60.38.181/server_rel/condition_PIDPressure/reason>
+                "KubeletHasSufficientPID" ;
+        <http://10.60.38.181/server_rel/condition_PIDPressure/status>
+                "False" .
+
+:Namespace  a  owl:Class .
+
+server:192.168.199.34
+        a                             :Server ;
+        server_rel:annotations        temp:139 ;
+        server_rel:condition_DiskPressure
+                temp:28 ;
+        server_rel:condition_MemoryPressure
+                temp:140 ;
+        server_rel:condition_PIDPressure
+                temp:138 ;
+        server_rel:condition_Ready    temp:90 ;
+        server_rel:creationTimestamp  "2019-07-01T10:10:14Z" ;
+        server_rel:labels             temp:92 ;
+        server_rel:name               "192.168.199.34" ;
+        server_rel:podCIDR            "172.20.1.0/24" .
+
+pod:carts-648d5f498d-test2
+        a                    :Pod ;
+        pod_rel:annotations  "" ;
+        pod_rel:labels       "" ;
+        pod_rel:name         "test_2" ;
+        pod_rel:namespace    "" ;
+        pod_rel:node         "" ;
+        pod_rel:startTime    "2019-4-1" ;
+        pod_rel:status       "" ;
+        pod_rel:type         "pod" .
+
+container:front-end  a              :Container ;
+        container_rel:containerID   "docker://616d03282334e18bd2256735838b99e0bc5eca8db90793fada3a5a2200081b87" , "docker://ee6bf7c239ecde9acf677194408a14e8bd228bbd31992e5ea67efa45433942b6" , "docker://85fe293f18d97b8bad96c15d26cbb293a4faef0f2021a30c470cc2d354135aad" , "docker://f911d89e91a7b83217b4edd5349e69dac410f61e1576f2970685dcffa1853a37" , "docker://4d5f6f3f17f6ee5aed79ede37a5251ce4e6ff617b1de1ca422c4027e28ddf14e" ;
+        container_rel:image         "weaveworksdemos/front-end:0.3.12" ;
+        container_rel:imageID       "docker-pullable://weaveworksdemos/front-end@sha256:26a2d9b6b291dee2dca32fca3f5bff6c2fa07bb5954359afcbc8001cc70eac71" ;
+        container_rel:name          "front-end" ;
+        container_rel:ports         temp:141 , temp:142 , temp:143 , temp:144 , temp:15 , temp:47 , temp:105 , temp:145 , temp:23 , temp:129 ;
+        container_rel:ready         "true" ;
+        container_rel:restartCount  "5" , "3" , "0" .
+
+temp:87
+        <http://10.60.38.181/service_rel/labels/name>
+                "catalogue-db" .
+
+temp:77
+        <http://10.60.38.181/pod_rel/labels/name>
+                "orders" ;
+        <http://10.60.38.181/pod_rel/labels/pod-template-hash>
+                "6496fcd6f7" .
+
+temp:9
+        <http://10.60.38.181/pod_rel/nodeSelector/beta.kubernetes.io-os>
+                "linux" .
+
+temp:146
+        <http://10.60.38.181/service_rel/ports/port>
+                "27017" ;
+        <http://10.60.38.181/service_rel/ports/protocol>
+                "TCP" ;
+        <http://10.60.38.181/service_rel/ports/targetPort>
+                "27017" .
+
+temp:62
+        <http://10.60.38.181/container_rel/ports/curstate>
+                "running" ;
+        <http://10.60.38.181/container_rel/ports/startedAt>
+                "2019-07-02T12:35:10Z" .
+
+temp:147
+        <http://10.60.38.181/pod_rel/labels/name>
+                "queue-master" ;
+        <http://10.60.38.181/pod_rel/labels/pod-template-hash>
+                "77d854c647" .
+
+temp:148
+        <http://10.60.38.181/pod_rel/labels/name>
+                "catalogue-db" ;
+        <http://10.60.38.181/pod_rel/labels/pod-template-hash>
+                "99cbcbb88" .
+
+temp:74
+        <http://10.60.38.181/service_rel/selector/name>
+                "front-end" .
+
+temp:149
+        <http://10.60.38.181/server_rel/condition_MemoryPressure/lastHeartbeatTime>
+                "2019-07-02T13:44:52Z" ;
+        <http://10.60.38.181/server_rel/condition_MemoryPressure/lastTransitionTime>
+                "2019-07-02T12:34:58Z" ;
+        <http://10.60.38.181/server_rel/condition_MemoryPressure/message>
+                "kubelet has sufficient memory available" ;
+        <http://10.60.38.181/server_rel/condition_MemoryPressure/reason>
+                "KubeletHasSufficientMemory" ;
+        <http://10.60.38.181/server_rel/condition_MemoryPressure/status>
+                "False" .
+
+service:rabbitmq  a                    :Service ;
+        service_rel:annotations        temp:25 ;
+        service_rel:clusterIP          "10.68.110.249" ;
+        service_rel:creationTimestamp  "2019-07-01T10:12:22Z" ;
+        service_rel:labels             temp:95 ;
+        service_rel:name               "rabbitmq" ;
+        service_rel:namespace          "sock-shop" ;
+        service_rel:ports              temp:124 ;
+        service_rel:resourceVersion    "959" ;
+        service_rel:selector           temp:150 ;
+        service_rel:type               "ClusterIP" .
+
+:Container  a  owl:Class .
+
+temp:63
+        <http://10.60.38.181/container_rel/ports/containerPort>
+                "80" ;
+        <http://10.60.38.181/container_rel/ports/protocol>
+                "TCP" .
+
+temp:151
+        <http://10.60.38.181/service_rel/annotations/kubectl.kubernetes.io/last-applied-configuration>
+                "{\\\"apiVersion\\\":\\\"v1\\\",\\\"kind\\\":\\\"Service\\\",\\\"metadata\\\":{\\\"annotations\\\":{},\\\"labels\\\":{\\\"k8s-app\\\":\\\"sock-shop\\\",\\\"name\\\":\\\"orders\\\"},\\\"name\\\":\\\"orders\\\",\\\"namespace\\\":\\\"sock-shop\\\"},\\\"spec\\\":{\\\"ports\\\":[{\\\"name\\\":\\\"sock-port\\\",\\\"port\\\":80,\\\"targetPort\\\":80}],\\\"selector\\\":{\\\"name\\\":\\\"orders\\\"}}}\n" .
+
+temp:110
+        <http://10.60.38.181/server_rel/labels/beta.kubernetes.io/arch>
+                "amd64" ;
+        <http://10.60.38.181/server_rel/labels/beta.kubernetes.io/os>
+                "linux" ;
+        <http://10.60.38.181/server_rel/labels/kubernetes.io/hostname>
+                "192.168.199.31" ;
+        <http://10.60.38.181/server_rel/labels/kubernetes.io/role>
+                "node" .
+
+temp:145
+        <http://10.60.38.181/container_rel/ports/containerPort>
+                "8079" ;
+        <http://10.60.38.181/container_rel/ports/protocol>
+                "TCP" .
+
+temp:152
+        <http://10.60.38.181/server_rel/annotations/flannel.alpha.coreos.com/backend-data>
+                "{\\\"VtepMAC\\\":\\\"72:d5:b3:54:5d:31\\\"}" ;
+        <http://10.60.38.181/server_rel/annotations/flannel.alpha.coreos.com/backend-type>
+                "vxlan" ;
+        <http://10.60.38.181/server_rel/annotations/flannel.alpha.coreos.com/kube-subnet-manager>
+                "true" ;
+        <http://10.60.38.181/server_rel/annotations/flannel.alpha.coreos.com/public-ip>
+                "192.168.199.35" ;
+        <http://10.60.38.181/server_rel/annotations/node.alpha.kubernetes.io/ttl>
+                "0" ;
+        <http://10.60.38.181/server_rel/annotations/volumes.kubernetes.io/controller-managed-attach-detach>
+                "true" .
+
+temp:153
+        <http://10.60.38.181/service_rel/selector/name>
+                "user" .
+
+temp:46
+        <http://10.60.38.181/service_rel/selector/name>
+                "queue-master" .
+
+temp:154
+        <http://10.60.38.181/server_rel/condition_DiskPressure/lastHeartbeatTime>
+                "2019-07-02T13:44:52Z" ;
+        <http://10.60.38.181/server_rel/condition_DiskPressure/lastTransitionTime>
+                "2019-07-02T12:34:58Z" ;
+        <http://10.60.38.181/server_rel/condition_DiskPressure/message>
+                "kubelet has no disk pressure" ;
+        <http://10.60.38.181/server_rel/condition_DiskPressure/reason>
+                "KubeletHasNoDiskPressure" ;
+        <http://10.60.38.181/server_rel/condition_DiskPressure/status>
+                "False" .
+
+temp:155
+        <http://10.60.38.181/service_rel/annotations/kubectl.kubernetes.io/last-applied-configuration>
+                "{\\\"apiVersion\\\":\\\"v1\\\",\\\"kind\\\":\\\"Service\\\",\\\"metadata\\\":{\\\"annotations\\\":{},\\\"labels\\\":{\\\"k8s-app\\\":\\\"sock-shop\\\",\\\"name\\\":\\\"carts-db\\\"},\\\"name\\\":\\\"carts-db\\\",\\\"namespace\\\":\\\"sock-shop\\\"},\\\"spec\\\":{\\\"ports\\\":[{\\\"port\\\":27017,\\\"targetPort\\\":27017}],\\\"selector\\\":{\\\"name\\\":\\\"carts-db\\\"}}}\n" .
+
+temp:4
+        <http://10.60.38.181/service_rel/annotations/kubectl.kubernetes.io/last-applied-configuration>
+                "{\\\"apiVersion\\\":\\\"v1\\\",\\\"kind\\\":\\\"Service\\\",\\\"metadata\\\":{\\\"annotations\\\":{},\\\"labels\\\":{\\\"k8s-app\\\":\\\"sock-shop\\\",\\\"name\\\":\\\"front-end\\\"},\\\"name\\\":\\\"front-end-external\\\",\\\"namespace\\\":\\\"sock-shop\\\"},\\\"spec\\\":{\\\"ports\\\":[{\\\"name\\\":\\\"sock-port\\\",\\\"nodePort\\\":30001,\\\"port\\\":80,\\\"protocol\\\":\\\"TCP\\\",\\\"targetPort\\\":8079}],\\\"selector\\\":{\\\"name\\\":\\\"front-end\\\"},\\\"type\\\":\\\"NodePort\\\"}}\n" .
+
+service:user  a                        :Service ;
+        service_rel:annotations        temp:156 ;
+        service_rel:clusterIP          "10.68.78.122" ;
+        service_rel:creationTimestamp  "2019-07-01T10:12:23Z" ;
+        service_rel:labels             temp:157 ;
+        service_rel:name               "user" ;
+        service_rel:namespace          "sock-shop" ;
+        service_rel:ports              temp:125 ;
+        service_rel:resourceVersion    "1027" ;
+        service_rel:selector           temp:153 ;
+        service_rel:type               "ClusterIP" .
+
+container:orders-db  a              :Container ;
+        container_rel:containerID   "docker://aa2bbc289cb8ae383fa54fa8902028e58c7ec2733853becf52f37386addf34b7" ;
+        container_rel:image         "mongo" ;
+        container_rel:imageID       "docker-pullable://mongo@sha256:01dc9fb0b7aae875678047e2d8550beb6fc34b7e76c60a1e7d7048f6700dead0" ;
+        container_rel:name          "orders-db" ;
+        container_rel:ports         temp:106 , temp:174 ;
+        container_rel:ready         "true" ;
+        container_rel:restartCount  "0" .
+
+service:carts-db  a                    :Service ;
+        service_rel:annotations        temp:155 ;
+        service_rel:clusterIP          "10.68.202.142" ;
+        service_rel:creationTimestamp  "2019-07-01T10:12:17Z" ;
+        service_rel:labels             temp:137 ;
+        service_rel:name               "carts-db" ;
+        service_rel:namespace          "sock-shop" ;
+        service_rel:ports              temp:130 ;
+        service_rel:resourceVersion    "751" ;
+        service_rel:selector           temp:132 ;
+        service_rel:type               "ClusterIP" .
+
+temp:158
+        <http://10.60.38.181/pod_rel/labels/name>
+                "carts" ;
+        <http://10.60.38.181/pod_rel/labels/pod-template-hash>
+                "648d5f498d" .
+
+pod:catalogue-b8587c9c5-wfvkt
+        a                     :Pod ;
+        pod_rel:contains      container:catalogue ;
+        pod_rel:deployed_in   server:192.168.199.34 ;
+        pod_rel:hostIP        "192.168.199.34" ;
+        pod_rel:labels        temp:159 ;
+        pod_rel:name          "catalogue-b8587c9c5-wfvkt" ;
+        pod_rel:namespace     "sock-shop" ;
+        pod_rel:nodeName      "192.168.199.34" ;
+        pod_rel:nodeSelector  temp:55 ;
+        pod_rel:phase         "Running" ;
+        pod_rel:podIP         "172.20.1.4" ;
+        pod_rel:provides      service:catalogue ;
+        pod_rel:qosClass      "BestEffort" ;
+        pod_rel:startTime     "2019-07-01T10:12:18Z" .
+
+:Pod  a       owl:Class .
+
+temp:50
+        <http://10.60.38.181/service_rel/annotations/kubectl.kubernetes.io/last-applied-configuration>
+                "{\\\"apiVersion\\\":\\\"v1\\\",\\\"kind\\\":\\\"Service\\\",\\\"metadata\\\":{\\\"annotations\\\":{},\\\"labels\\\":{\\\"k8s-app\\\":\\\"sock-shop\\\",\\\"name\\\":\\\"shipping\\\"},\\\"name\\\":\\\"shipping\\\",\\\"namespace\\\":\\\"sock-shop\\\"},\\\"spec\\\":{\\\"ports\\\":[{\\\"name\\\":\\\"sock-port\\\",\\\"port\\\":80,\\\"targetPort\\\":80}],\\\"selector\\\":{\\\"name\\\":\\\"shipping\\\"}}}\n" .
+
+temp:72
+        <http://10.60.38.181/service_rel/labels/name>
+                "front-end" .
+
+temp:121
+        <http://10.60.38.181/pod_rel/labels/name>
+                "orders" ;
+        <http://10.60.38.181/pod_rel/labels/pod-template-hash>
+                "6496fcd6f7" .
+
+temp:160
+        <http://10.60.38.181/container_rel/ports/curstate>
+                "running" ;
+        <http://10.60.38.181/container_rel/ports/startedAt>
+                "2019-07-01T10:14:20Z" .
+
+temp:2
+        <http://10.60.38.181/pod_rel/labels/name>
+                "front-end" ;
+        <http://10.60.38.181/pod_rel/labels/pod-template-hash>
+                "858b4ff57" .
+
+container:carts  a                  :Container ;
+        container_rel:containerID   "docker://ea9d6c15cb65edad16fd9c470e7f3a333c8c41623cea41116642a457a2ca4b14" ;
+        container_rel:image         "weaveworksdemos/carts:0.4.8" ;
+        container_rel:imageID       "docker-pullable://weaveworksdemos/carts@sha256:434d2f5a6e0e8beef1f253fe96f45b8437a703125fc003434c5282ecf8969a4f" ;
+        container_rel:name          "carts" ;
+        container_rel:ports         temp:160 , temp:91 ;
+        container_rel:ready         "true" ;
+        container_rel:restartCount  "0" .
+
+pod:orders-db-86f5c494b9-xvvhr
+        a                     :Pod ;
+        pod_rel:contains      container:orders-db ;
+        pod_rel:deployed_in   server:192.168.199.33 ;
+        pod_rel:hostIP        "192.168.199.33" ;
+        pod_rel:labels        temp:161 ;
+        pod_rel:name          "orders-db-86f5c494b9-xvvhr" ;
+        pod_rel:namespace     "sock-shop" ;
+        pod_rel:nodeName      "192.168.199.33" ;
+        pod_rel:nodeSelector  temp:99 ;
+        pod_rel:phase         "Running" ;
+        pod_rel:podIP         "172.20.4.4" ;
+        pod_rel:provides      service:orders-db ;
+        pod_rel:qosClass      "BestEffort" ;
+        pod_rel:startTime     "2019-07-01T10:12:20Z" .
+
+temp:140
+        <http://10.60.38.181/server_rel/condition_MemoryPressure/lastHeartbeatTime>
+                "2019-07-02T13:44:50Z" ;
+        <http://10.60.38.181/server_rel/condition_MemoryPressure/lastTransitionTime>
+                "2019-07-02T12:34:55Z" ;
+        <http://10.60.38.181/server_rel/condition_MemoryPressure/message>
+                "kubelet has sufficient memory available" ;
+        <http://10.60.38.181/server_rel/condition_MemoryPressure/reason>
+                "KubeletHasSufficientMemory" ;
+        <http://10.60.38.181/server_rel/condition_MemoryPressure/status>
+                "False" .
+
+temp:143
+        <http://10.60.38.181/container_rel/ports/containerPort>
+                "8079" ;
+        <http://10.60.38.181/container_rel/ports/protocol>
+                "TCP" .
+
+temp:162
+        <http://10.60.38.181/service_rel/selector/name>
+                "payment" .
+
+temp:60
+        <http://10.60.38.181/container_rel/ports/curstate>
+                "running" ;
+        <http://10.60.38.181/container_rel/ports/startedAt>
+                "2019-07-01T10:15:10Z" .
+
+pod:orders-6496fcd6f7-l9rmn
+        a                     :Pod ;
+        pod_rel:contains      container:orders ;
+        pod_rel:deployed_in   server:192.168.199.32 ;
+        pod_rel:hostIP        "192.168.199.32" ;
+        pod_rel:labels        temp:93 ;
+        pod_rel:name          "orders-6496fcd6f7-l9rmn" ;
+        pod_rel:namespace     "sock-shop" ;
+        pod_rel:nodeName      "192.168.199.32" ;
+        pod_rel:nodeSelector  temp:14 ;
+        pod_rel:phase         "Running" ;
+        pod_rel:podIP         "172.20.2.6" ;
+        pod_rel:provides      service:orders ;
+        pod_rel:qosClass      "BestEffort" ;
+        pod_rel:startTime     "2019-07-01T10:12:20Z" .
+
+temp:136
+        <http://10.60.38.181/pod_rel/labels/name>
+                "session-db" ;
+        <http://10.60.38.181/pod_rel/labels/pod-template-hash>
+                "6b57d5cc79" .
+
+temp:3
+        <http://10.60.38.181/pod_rel/nodeSelector/beta.kubernetes.io-os>
+                "linux" .
+
+pod:carts-648d5f498d-n8hzn
+        a                     :Pod ;
+        pod_rel:contains      container:carts ;
+        pod_rel:deployed_in   server:192.168.199.32 ;
+        pod_rel:hostIP        "192.168.199.32" ;
+        pod_rel:labels        temp:158 ;
+        pod_rel:name          "carts-648d5f498d-n8hzn" ;
+        pod_rel:namespace     "sock-shop" ;
+        pod_rel:nodeName      "192.168.199.32" ;
+        pod_rel:nodeSelector  temp:163 ;
+        pod_rel:phase         "Running" ;
+        pod_rel:podIP         "172.20.2.3" ;
+        pod_rel:provides      service:carts ;
+        pod_rel:qosClass      "BestEffort" ;
+        pod_rel:startTime     "2019-07-01T10:12:17Z" .
+
+temp:107
+        <http://10.60.38.181/server_rel/annotations/flannel.alpha.coreos.com/backend-data>
+                "{\\\"VtepMAC\\\":\\\"16:91:0e:4b:db:8d\\\"}" ;
+        <http://10.60.38.181/server_rel/annotations/flannel.alpha.coreos.com/backend-type>
+                "vxlan" ;
+        <http://10.60.38.181/server_rel/annotations/flannel.alpha.coreos.com/kube-subnet-manager>
+                "true" ;
+        <http://10.60.38.181/server_rel/annotations/flannel.alpha.coreos.com/public-ip>
+                "192.168.199.191" ;
+        <http://10.60.38.181/server_rel/annotations/node.alpha.kubernetes.io/ttl>
+                "0" ;
+        <http://10.60.38.181/server_rel/annotations/volumes.kubernetes.io/controller-managed-attach-detach>
+                "true" .
+
+service:payment  a                     :Service ;
+        service_rel:annotations        temp:18 ;
+        service_rel:clusterIP          "10.68.65.33" ;
+        service_rel:creationTimestamp  "2019-07-01T10:12:20Z" ;
+        service_rel:labels             temp:164 ;
+        service_rel:name               "payment" ;
+        service_rel:namespace          "sock-shop" ;
+        service_rel:ports              temp:165 ;
+        service_rel:resourceVersion    "916" ;
+        service_rel:selector           temp:162 ;
+        service_rel:type               "ClusterIP" .
+
+temp:139
+        <http://10.60.38.181/server_rel/annotations/flannel.alpha.coreos.com/backend-data>
+                "{\\\"VtepMAC\\\":\\\"ee:ea:6e:2a:c7:dd\\\"}" ;
+        <http://10.60.38.181/server_rel/annotations/flannel.alpha.coreos.com/backend-type>
+                "vxlan" ;
+        <http://10.60.38.181/server_rel/annotations/flannel.alpha.coreos.com/kube-subnet-manager>
+                "true" ;
+        <http://10.60.38.181/server_rel/annotations/flannel.alpha.coreos.com/public-ip>
+                "192.168.199.34" ;
+        <http://10.60.38.181/server_rel/annotations/node.alpha.kubernetes.io/ttl>
+                "0" ;
+        <http://10.60.38.181/server_rel/annotations/volumes.kubernetes.io/controller-managed-attach-detach>
+                "true" .
+
+environment_rel:has  a  owl:ObjectProperty ;
+        rdfs:domain  :Environment ;
+        rdfs:range   :Server .
+
+temp:33
+        <http://10.60.38.181/server_rel/condition_Ready/lastHeartbeatTime>
+                "2019-07-02T13:44:51Z" ;
+        <http://10.60.38.181/server_rel/condition_Ready/lastTransitionTime>
+                "2019-07-02T12:34:58Z" ;
+        <http://10.60.38.181/server_rel/condition_Ready/message>
+                "kubelet is posting ready status. AppArmor enabled" ;
+        <http://10.60.38.181/server_rel/condition_Ready/reason>
+                "KubeletReady" ;
+        <http://10.60.38.181/server_rel/condition_Ready/status>
+                "True" .
+
+temp:35
+        <http://10.60.38.181/service_rel/annotations/kubectl.kubernetes.io/last-applied-configuration>
+                "{\\\"apiVersion\\\":\\\"v1\\\",\\\"kind\\\":\\\"Service\\\",\\\"metadata\\\":{\\\"annotations\\\":{},\\\"labels\\\":{\\\"k8s-app\\\":\\\"sock-shop\\\",\\\"name\\\":\\\"catalogue\\\"},\\\"name\\\":\\\"catalogue\\\",\\\"namespace\\\":\\\"sock-shop\\\"},\\\"spec\\\":{\\\"ports\\\":[{\\\"name\\\":\\\"sock-port\\\",\\\"port\\\":80,\\\"targetPort\\\":80}],\\\"selector\\\":{\\\"name\\\":\\\"catalogue\\\"}}}\n" .
+
+temp:41
+        <http://10.60.38.181/pod_rel/nodeSelector/beta.kubernetes.io-os>
+                "linux" .
+
+temp:166
+        <http://10.60.38.181/pod_rel/nodeSelector/beta.kubernetes.io-os>
+                "linux" .
+
+temp:21
+        <http://10.60.38.181/service_rel/ports/port>
+                "27017" ;
+        <http://10.60.38.181/service_rel/ports/protocol>
+                "TCP" ;
+        <http://10.60.38.181/service_rel/ports/targetPort>
+                "27017" .
+
+temp:167
+        <http://10.60.38.181/container_rel/ports/containerPort>
+                "80" ;
+        <http://10.60.38.181/container_rel/ports/protocol>
+                "TCP" .
+
+temp:156
+        <http://10.60.38.181/service_rel/annotations/kubectl.kubernetes.io/last-applied-configuration>
+                "{\\\"apiVersion\\\":\\\"v1\\\",\\\"kind\\\":\\\"Service\\\",\\\"metadata\\\":{\\\"annotations\\\":{},\\\"labels\\\":{\\\"k8s-app\\\":\\\"sock-shop\\\",\\\"name\\\":\\\"user\\\"},\\\"name\\\":\\\"user\\\",\\\"namespace\\\":\\\"sock-shop\\\"},\\\"spec\\\":{\\\"ports\\\":[{\\\"name\\\":\\\"sock-port\\\",\\\"port\\\":80,\\\"targetPort\\\":80}],\\\"selector\\\":{\\\"name\\\":\\\"user\\\"}}}\n" .
+
+temp:102
+        <http://10.60.38.181/container_rel/ports/curstate>
+                "running" ;
+        <http://10.60.38.181/container_rel/ports/startedAt>
+                "2019-07-01T10:16:20Z" .
+
+server:192.168.199.32
+        a                             :Server ;
+        server_rel:annotations        temp:168 ;
+        server_rel:condition_DiskPressure
+                temp:101 ;
+        server_rel:condition_MemoryPressure
+                temp:71 ;
+        server_rel:condition_PIDPressure
+                temp:24 ;
+        server_rel:condition_Ready    temp:111 ;
+        server_rel:creationTimestamp  "2019-07-01T10:10:14Z" ;
+        server_rel:labels             temp:118 ;
+        server_rel:name               "192.168.199.32" ;
+        server_rel:podCIDR            "172.20.2.0/24" .
+
+temp:131
+        <http://10.60.38.181/container_rel/ports/curstate>
+                "running" ;
+        <http://10.60.38.181/container_rel/ports/startedAt>
+                "2019-07-01T10:13:47Z" .
+
+:Server  a    owl:Class .
+
+temp:159
+        <http://10.60.38.181/pod_rel/labels/name>
+                "catalogue" ;
+        <http://10.60.38.181/pod_rel/labels/pod-template-hash>
+                "b8587c9c5" .
+
+temp:134
+        <http://10.60.38.181/container_rel/ports/curstate>
+                "running" ;
+        <http://10.60.38.181/container_rel/ports/startedAt>
+                "2019-07-01T10:16:21Z" .
+
+temp:127
+        <http://10.60.38.181/service_rel/annotations/kubectl.kubernetes.io/last-applied-configuration>
+                "{\\\"apiVersion\\\":\\\"v1\\\",\\\"kind\\\":\\\"Service\\\",\\\"metadata\\\":{\\\"annotations\\\":{},\\\"labels\\\":{\\\"k8s-app\\\":\\\"sock-shop\\\",\\\"name\\\":\\\"session-db\\\"},\\\"name\\\":\\\"session-db\\\",\\\"namespace\\\":\\\"sock-shop\\\"},\\\"spec\\\":{\\\"ports\\\":[{\\\"port\\\":6379,\\\"targetPort\\\":6379}],\\\"selector\\\":{\\\"name\\\":\\\"session-db\\\"}}}\n" .
+
+pod:carts-db-64b6cc584f-zd6zz
+        a                     :Pod ;
+        pod_rel:contains      container:carts-db ;
+        pod_rel:deployed_in   server:192.168.199.33 ;
+        pod_rel:hostIP        "192.168.199.33" ;
+        pod_rel:labels        temp:178 ;
+        pod_rel:name          "carts-db-64b6cc584f-zd6zz" ;
+        pod_rel:namespace     "sock-shop" ;
+        pod_rel:nodeName      "192.168.199.33" ;
+        pod_rel:nodeSelector  temp:169 ;
+        pod_rel:phase         "Running" ;
+        pod_rel:podIP         "172.20.4.2" ;
+        pod_rel:provides      service:carts-db ;
+        pod_rel:qosClass      "BestEffort" ;
+        pod_rel:startTime     "2019-07-01T10:12:17Z" .
+
+temp:169
+        <http://10.60.38.181/pod_rel/nodeSelector/beta.kubernetes.io-os>
+                "linux" .
+
+container:session-db  a             :Container ;
+        container_rel:containerID   "docker://f2016c2113e74849df2eaa3f08747199a40ff93df754173202d225a9365c4d7f" ;
+        container_rel:image         "redis:alpine" ;
+        container_rel:imageID       "docker-pullable://redis@sha256:7d2a7f4444bf4728f79360cc7b36b9537ab73782284e90d3e07f6098ffe92b71" ;
+        container_rel:name          "session-db" ;
+        container_rel:ports         temp:115 , temp:170 ;
+        container_rel:ready         "true" ;
+        container_rel:restartCount  "0" .
+
+temp:5
+        <http://10.60.38.181/service_rel/labels/name>
+                "front-end" .
+
+pod:queue-master-77d854c647-qbgwq
+        a                     :Pod ;
+        pod_rel:contains      container:queue-master ;
+        pod_rel:deployed_in   server:192.168.199.33 ;
+        pod_rel:hostIP        "192.168.199.33" ;
+        pod_rel:labels        temp:147 ;
+        pod_rel:name          "queue-master-77d854c647-qbgwq" ;
+        pod_rel:namespace     "sock-shop" ;
+        pod_rel:nodeName      "192.168.199.33" ;
+        pod_rel:nodeSelector  temp:42 ;
+        pod_rel:phase         "Running" ;
+        pod_rel:podIP         "172.20.4.18" ;
+        pod_rel:provides      service:queue-master ;
+        pod_rel:qosClass      "BestEffort" ;
+        pod_rel:startTime     "2019-07-02T12:35:00Z" .
+
+temp:122
+        <http://10.60.38.181/pod_rel/nodeSelector/beta.kubernetes.io-os>
+                "linux" .
+
+temp:75
+        <http://10.60.38.181/pod_rel/labels/name>
+                "user" ;
+        <http://10.60.38.181/pod_rel/labels/pod-template-hash>
+                "d4cb47c5f" .
+
+temp:171
+        <http://10.60.38.181/service_rel/labels/name>
+                "orders-db" .
+
+pod:front-end-858b4ff57-gq9k9
+        a                     :Pod ;
+        pod_rel:contains      container:front-end ;
+        pod_rel:deployed_in   server:192.168.199.34 ;
+        pod_rel:hostIP        "192.168.199.34" ;
+        pod_rel:labels        temp:112 ;
+        pod_rel:name          "front-end-858b4ff57-gq9k9" ;
+        pod_rel:namespace     "sock-shop" ;
+        pod_rel:nodeName      "192.168.199.34" ;
+        pod_rel:nodeSelector  temp:166 ;
+        pod_rel:phase         "Running" ;
+        pod_rel:podIP         "172.20.1.5" ;
+        pod_rel:provides      service:front-end ;
+        pod_rel:qosClass      "BestEffort" ;
+        pod_rel:startTime     "2019-07-01T10:12:19Z" .
+
+service:orders  a                      :Service ;
+        service_rel:annotations        temp:151 ;
+        service_rel:clusterIP          "10.68.107.110" ;
+        service_rel:creationTimestamp  "2019-07-01T10:12:20Z" ;
+        service_rel:labels             temp:113 ;
+        service_rel:name               "orders" ;
+        service_rel:namespace          "sock-shop" ;
+        service_rel:ports              temp:120 ;
+        service_rel:resourceVersion    "876" ;
+        service_rel:selector           temp:96 ;
+        service_rel:type               "ClusterIP" .
+
+temp:165
+        <http://10.60.38.181/service_rel/ports/port>
+                "80" ;
+        <http://10.60.38.181/service_rel/ports/protocol>
+                "TCP" ;
+        <http://10.60.38.181/service_rel/ports/targetPort>
+                "80" .
+
+temp:67
+        <http://10.60.38.181/container_rel/ports/containerPort>
+                "80" ;
+        <http://10.60.38.181/container_rel/ports/protocol>
+                "TCP" .
+
+pod:front-end-858b4ff57-55bg5
+        a                     :Pod ;
+        pod_rel:contains      container:front-end ;
+        pod_rel:deployed_in   server:192.168.199.32 ;
+        pod_rel:hostIP        "192.168.199.32" ;
+        pod_rel:labels        temp:172 ;
+        pod_rel:name          "front-end-858b4ff57-55bg5" ;
+        pod_rel:namespace     "sock-shop" ;
+        pod_rel:nodeName      "192.168.199.32" ;
+        pod_rel:nodeSelector  temp:173 ;
+        pod_rel:phase         "Running" ;
+        pod_rel:podIP         "172.20.2.4" ;
+        pod_rel:provides      service:front-end ;
+        pod_rel:qosClass      "BestEffort" ;
+        pod_rel:startTime     "2019-07-01T10:12:19Z" .
+
+temp:58
+        <http://10.60.38.181/container_rel/ports/curstate>
+                "running" ;
+        <http://10.60.38.181/container_rel/ports/startedAt>
+                "2019-07-01T10:15:05Z" .
+
+temp:174
+        <http://10.60.38.181/container_rel/ports/curstate>
+                "running" ;
+        <http://10.60.38.181/container_rel/ports/startedAt>
+                "2019-07-01T10:16:04Z" .
+
+pod:orders-6496fcd6f7-qcmj7
+        a                     :Pod ;
+        pod_rel:contains      container:orders ;
+        pod_rel:deployed_in   server:192.168.199.33 ;
+        pod_rel:hostIP        "192.168.199.33" ;
+        pod_rel:labels        temp:11 ;
+        pod_rel:name          "orders-6496fcd6f7-qcmj7" ;
+        pod_rel:namespace     "sock-shop" ;
+        pod_rel:nodeName      "192.168.199.33" ;
+        pod_rel:nodeSelector  temp:114 ;
+        pod_rel:phase         "Running" ;
+        pod_rel:podIP         "172.20.4.6" ;
+        pod_rel:provides      service:orders ;
+        pod_rel:qosClass      "BestEffort" ;
+        pod_rel:startTime     "2019-07-01T10:12:20Z" .
+
+temp:104
+        <http://10.60.38.181/pod_rel/nodeSelector/beta.kubernetes.io-os>
+                "linux" .
+
+temp:144
+        <http://10.60.38.181/container_rel/ports/curstate>
+                "running" ;
+        <http://10.60.38.181/container_rel/ports/startedAt>
+                "2019-07-01T19:19:13Z" .
+
+temp:170
+        <http://10.60.38.181/container_rel/ports/containerPort>
+                "6379" ;
+        <http://10.60.38.181/container_rel/ports/protocol>
+                "TCP" .
+
+temp:66
+        <http://10.60.38.181/container_rel/ports/curstate>
+                "running" ;
+        <http://10.60.38.181/container_rel/ports/startedAt>
+                "2019-07-01T10:15:13Z" .
+
+temp:52
+        <http://10.60.38.181/service_rel/selector/name>
+                "shipping" .
+
+temp:172
+        <http://10.60.38.181/pod_rel/labels/name>
+                "front-end" ;
+        <http://10.60.38.181/pod_rel/labels/pod-template-hash>
+                "858b4ff57" .
+
+temp:89
+        <http://10.60.38.181/service_rel/selector/name>
+                "catalogue-db" .
+
+temp:34
+        <http://10.60.38.181/server_rel/labels/beta.kubernetes.io/arch>
+                "amd64" ;
+        <http://10.60.38.181/server_rel/labels/beta.kubernetes.io/os>
+                "linux" ;
+        <http://10.60.38.181/server_rel/labels/kubernetes.io/hostname>
+                "192.168.199.33" ;
+        <http://10.60.38.181/server_rel/labels/kubernetes.io/role>
+                "node" .
+
+temp:59
+        <http://10.60.38.181/container_rel/ports/curstate>
+                "running" ;
+        <http://10.60.38.181/container_rel/ports/startedAt>
+                "2019-07-02T12:35:07Z" .
+
+container:user  a                   :Container ;
+        container_rel:containerID   "docker://343064f597c75da2bae6c750609c01c93ba41aa10e8f85477d3f538f0859b1e9" ;
+        container_rel:image         "weaveworksdemos/user:0.4.7" ;
+        container_rel:imageID       "docker-pullable://weaveworksdemos/user@sha256:2ffccc332963c89e035fea52201012208bf62df43a55fe461ad6598a5c757ab7" ;
+        container_rel:name          "user" ;
+        container_rel:ports         temp:85 , temp:116 ;
+        container_rel:ready         "true" ;
+        container_rel:restartCount  "0" .
+
+temp:175
+        <http://10.60.38.181/server_rel/labels/beta.kubernetes.io/arch>
+                "amd64" ;
+        <http://10.60.38.181/server_rel/labels/beta.kubernetes.io/os>
+                "linux" ;
+        <http://10.60.38.181/server_rel/labels/kubernetes.io/hostname>
+                "192.168.199.35" ;
+        <http://10.60.38.181/server_rel/labels/kubernetes.io/role>
+                "node" .
+
+temp:176
+        <http://10.60.38.181/pod_rel/nodeSelector/beta.kubernetes.io-os>
+                "linux" .
+
+server:192.168.199.35
+        a                             :Server ;
+        server_rel:annotations        temp:152 ;
+        server_rel:condition_DiskPressure
+                temp:154 ;
+        server_rel:condition_MemoryPressure
+                temp:149 ;
+        server_rel:condition_PIDPressure
+                temp:82 ;
+        server_rel:condition_Ready    temp:123 ;
+        server_rel:creationTimestamp  "2019-07-01T10:10:14Z" ;
+        server_rel:labels             temp:175 ;
+        server_rel:name               "192.168.199.35" ;
+        server_rel:podCIDR            "172.20.3.0/24" .
+
+temp:51
+        <http://10.60.38.181/service_rel/labels/name>
+                "shipping" .
+
+container:rabbitmq  a               :Container ;
+        container_rel:containerID   "docker://6060c947b08db725d92e677e230d1e334daf0fd6b4ae87acb4373208b4dfc8b6" ;
+        container_rel:image         "rabbitmq:3.6.8-management" ;
+        container_rel:imageID       "docker-pullable://rabbitmq@sha256:0297618bd60270f03665448b02b3b1110dfc51fae60a3c6804005169f0904dad" ;
+        container_rel:name          "rabbitmq" ;
+        container_rel:ports         temp:133 , temp:126 ;
+        container_rel:ready         "true" ;
+        container_rel:restartCount  "0" .
+
+temp:150
+        <http://10.60.38.181/service_rel/selector/name>
+                "rabbitmq" .
+
+temp:168
+        <http://10.60.38.181/server_rel/annotations/flannel.alpha.coreos.com/backend-data>
+                "{\\\"VtepMAC\\\":\\\"16:e6:44:95:05:af\\\"}" ;
+        <http://10.60.38.181/server_rel/annotations/flannel.alpha.coreos.com/backend-type>
+                "vxlan" ;
+        <http://10.60.38.181/server_rel/annotations/flannel.alpha.coreos.com/kube-subnet-manager>
+                "true" ;
+        <http://10.60.38.181/server_rel/annotations/flannel.alpha.coreos.com/public-ip>
+                "192.168.199.32" ;
+        <http://10.60.38.181/server_rel/annotations/node.alpha.kubernetes.io/ttl>
+                "0" ;
+        <http://10.60.38.181/server_rel/annotations/volumes.kubernetes.io/controller-managed-attach-detach>
+                "true" .
+
+temp:78
+        <http://10.60.38.181/pod_rel/labels/name>
+                "rabbitmq" ;
+        <http://10.60.38.181/pod_rel/labels/pod-template-hash>
+                "6cf767fcc4" .
+
+temp:20
+        <http://10.60.38.181/service_rel/labels/name>
+                "user-db" .
+
+temp:173
+        <http://10.60.38.181/pod_rel/nodeSelector/beta.kubernetes.io-os>
+                "linux" .
+
+temp:81
+        <http://10.60.38.181/container_rel/ports/containerPort>
+                "80" ;
+        <http://10.60.38.181/container_rel/ports/protocol>
+                "TCP" .
+
+pod:payment-6c698f689b-vlkhq
+        a                     :Pod ;
+        pod_rel:contains      container:payment ;
+        pod_rel:deployed_in   server:192.168.199.33 ;
+        pod_rel:hostIP        "192.168.199.33" ;
+        pod_rel:labels        temp:54 ;
+        pod_rel:name          "payment-6c698f689b-vlkhq" ;
+        pod_rel:namespace     "sock-shop" ;
+        pod_rel:nodeName      "192.168.199.33" ;
+        pod_rel:nodeSelector  temp:176 ;
+        pod_rel:phase         "Running" ;
+        pod_rel:podIP         "172.20.4.7" ;
+        pod_rel:provides      service:payment ;
+        pod_rel:qosClass      "BestEffort" ;
+        pod_rel:startTime     "2019-07-01T10:12:21Z" .
+
+pod_rel:provides  a  owl:ObjectProperty ;
+        rdfs:domain  :Pod ;
+        rdfs:range   :Service .
+
+server:192.168.199.191
+        a                  :Server ;
+        server_rel:manage  server:192.168.199.34 , server:192.168.199.35 , server:192.168.199.33 , server:192.168.199.32 , server:192.168.199.31 .
+
+temp:103
+        <http://10.60.38.181/container_rel/ports/containerPort>
+                "27017" ;
+        <http://10.60.38.181/container_rel/ports/protocol>
+                "TCP" .
+
+container:payment  a                :Container ;
+        container_rel:containerID   "docker://5598466f6221bb57dbd645cbbf23794b6a0bc82ddd08c473158ea5169332d8f6" ;
+        container_rel:image         "weaveworksdemos/payment:0.4.3" ;
+        container_rel:imageID       "docker-pullable://weaveworksdemos/payment@sha256:5ab1c9877480a018d4dda10d6dfa382776e6bca9fc1c60bacbb80903fde8cfe0" ;
+        container_rel:name          "payment" ;
+        container_rel:ports         temp:177 , temp:167 ;
+        container_rel:ready         "true" ;
+        container_rel:restartCount  "0" .
+
+temp:178
+        <http://10.60.38.181/pod_rel/labels/name>
+                "carts-db" ;
+        <http://10.60.38.181/pod_rel/labels/pod-template-hash>
+                "64b6cc584f" .
+
+temp:69
+        <http://10.60.38.181/service_rel/labels/name>
+                "carts" .
+
+temp:163
+        <http://10.60.38.181/pod_rel/nodeSelector/beta.kubernetes.io-os>
+                "linux" .
+
+service:orders-db  a                   :Service ;
+        service_rel:annotations        temp:26 ;
+        service_rel:clusterIP          "10.68.99.176" ;
+        service_rel:creationTimestamp  "2019-07-01T10:12:19Z" ;
+        service_rel:labels             temp:171 ;
+        service_rel:name               "orders-db" ;
+        service_rel:namespace          "sock-shop" ;
+        service_rel:ports              temp:146 ;
+        service_rel:resourceVersion    "861" ;
+        service_rel:selector           temp:117 ;
+        service_rel:type               "ClusterIP" .
+
+temp:109
+        <http://10.60.38.181/server_rel/condition_PIDPressure/lastHeartbeatTime>
+                "2019-07-02T13:44:49Z" ;
+        <http://10.60.38.181/server_rel/condition_PIDPressure/lastTransitionTime>
+                "2019-07-01T10:09:35Z" ;
+        <http://10.60.38.181/server_rel/condition_PIDPressure/message>
+                "kubelet has sufficient PID available" ;
+        <http://10.60.38.181/server_rel/condition_PIDPressure/reason>
+                "KubeletHasSufficientPID" ;
+        <http://10.60.38.181/server_rel/condition_PIDPressure/status>
+                "False" .
+
+temp:65
+        <http://10.60.38.181/container_rel/ports/containerPort>
+                "80" ;
+        <http://10.60.38.181/container_rel/ports/protocol>
+                "TCP" .
+
+temp:57
+        <http://10.60.38.181/container_rel/ports/containerPort>
+                "27017" ;
+        <http://10.60.38.181/container_rel/ports/protocol>
+                "TCP" .
+
+temp:45
+        <http://10.60.38.181/service_rel/ports/port>
+                "80" ;
+        <http://10.60.38.181/service_rel/ports/protocol>
+                "TCP" ;
+        <http://10.60.38.181/service_rel/ports/targetPort>
+                "80" .
+
+temp:164
+        <http://10.60.38.181/service_rel/labels/name>
+                "payment" .
+
+temp:44
+        <http://10.60.38.181/service_rel/labels/name>
+                "queue-master" .
+
+temp:135
+        <http://10.60.38.181/container_rel/ports/containerPort>
+                "80" ;
+        <http://10.60.38.181/container_rel/ports/protocol>
+                "TCP" .
+
+temp:157
+        <http://10.60.38.181/service_rel/labels/name>
+                "user" .
+
+temp:141
+        <http://10.60.38.181/container_rel/ports/curstate>
+                "running" ;
+        <http://10.60.38.181/container_rel/ports/startedAt>
+                "2019-07-02T12:35:10Z" .
+
+:Environment  a  owl:Class .
+
+temp:177
+        <http://10.60.38.181/container_rel/ports/curstate>
+                "running" ;
+        <http://10.60.38.181/container_rel/ports/startedAt>
+                "2019-07-01T10:17:59Z" .
+
+pod:orders-6496fcd6f7-tw8sm
+        a                     :Pod ;
+        pod_rel:contains      container:orders ;
+        pod_rel:deployed_in   server:192.168.199.34 ;
+        pod_rel:hostIP        "192.168.199.34" ;
+        pod_rel:labels        temp:119 ;
+        pod_rel:name          "orders-6496fcd6f7-tw8sm" ;
+        pod_rel:namespace     "sock-shop" ;
+        pod_rel:nodeName      "192.168.199.34" ;
+        pod_rel:nodeSelector  temp:94 ;
+        pod_rel:phase         "Running" ;
+        pod_rel:podIP         "172.20.1.6" ;
+        pod_rel:provides      service:orders ;
+        pod_rel:qosClass      "BestEffort" ;
+        pod_rel:startTime     "2019-07-01T10:12:20Z" .
+
+temp:68
+        <http://10.60.38.181/service_rel/annotations/kubectl.kubernetes.io/last-applied-configuration>
+                "{\\\"apiVersion\\\":\\\"v1\\\",\\\"kind\\\":\\\"Service\\\",\\\"metadata\\\":{\\\"annotations\\\":{},\\\"labels\\\":{\\\"k8s-app\\\":\\\"sock-shop\\\",\\\"name\\\":\\\"carts\\\"},\\\"name\\\":\\\"carts\\\",\\\"namespace\\\":\\\"sock-shop\\\"},\\\"spec\\\":{\\\"ports\\\":[{\\\"name\\\":\\\"sock-port\\\",\\\"port\\\":80,\\\"targetPort\\\":80}],\\\"selector\\\":{\\\"name\\\":\\\"carts\\\"}}}\n" .
+
+server_rel:manage  a  owl:ObjectProperty ;
+        rdfs:domain  :Server ;
+        rdfs:range   :Server .
+
+temp:128
+        <http://10.60.38.181/service_rel/ports/port>
+                "6379" ;
+        <http://10.60.38.181/service_rel/ports/protocol>
+                "TCP" ;
+        <http://10.60.38.181/service_rel/ports/targetPort>
+                "6379" .
+
+pod:catalogue-db-99cbcbb88-wl52p
+        a                     :Pod ;
+        pod_rel:contains      container:catalogue-db ;
+        pod_rel:deployed_in   server:192.168.199.33 ;
+        pod_rel:hostIP        "192.168.199.33" ;
+        pod_rel:labels        temp:148 ;
+        pod_rel:name          "catalogue-db-99cbcbb88-wl52p" ;
+        pod_rel:namespace     "sock-shop" ;
+        pod_rel:nodeName      "192.168.199.33" ;
+        pod_rel:nodeSelector  temp:84 ;
+        pod_rel:phase         "Running" ;
+        pod_rel:podIP         "172.20.4.3" ;
+        pod_rel:provides      service:catalogue-db ;
+        pod_rel:qosClass      "BestEffort" ;
+        pod_rel:startTime     "2019-07-01T10:12:18Z" .
