@@ -19,6 +19,13 @@ import java.util.Vector;
  **/
 public class DynamicKGUpdateService {
     public static OutputStream WriteDynamicDataToModel(DynamicDataEntity dynamicDataEntity){
+        /**
+         * @description: 将动态数据写入空的Mode
+         *
+         * @param dynamicDataEntity : 动态数据（已将json数据转化为实体对象）
+         *
+         * @return : java.io.OutputStream
+         **/
         Model model = ModelFactory.createDefaultModel();
         model.setNsPrefix("pod_rel", "http://10.60.38.181/pod_rel/");
         model.setNsPrefix("pod", "http://10.60.38.181/pod/");
@@ -40,6 +47,13 @@ public class DynamicKGUpdateService {
     }
 
     public static String RefactorSyntax(ByteArrayOutputStream outputStream) throws IOException {
+        /**
+         * @description: 修改直接写入model带来的符号错误 (<, >, : .etc)
+         *
+         * @param outputStream : 写入model后的输出流
+         *
+         * @return : java.lang.String
+         **/
         Vector<String> strVec = new Vector<String>();
 
         InputStream inputStream = new ByteArrayInputStream(outputStream.toByteArray());
@@ -66,6 +80,14 @@ public class DynamicKGUpdateService {
     }
 
     public static void UpdateDynamicData2KG(String originFilename, String str){
+        /**
+         * @description: 将动态数据写入原始数据
+         *
+         * @param originFilename : 原始数据文件名
+         * @param str : 待写入的信息
+         *
+         * @return : void
+         **/
         BufferedWriter out = null;
         try {
             out = new BufferedWriter(new OutputStreamWriter(
@@ -86,6 +108,7 @@ public class DynamicKGUpdateService {
             }
         }
     }
+
     public static void main(String[] args) throws IOException {
         //模拟接受json数据（已转换格式）
         DynamicDataEntity sample = DynamicDataEntity.getSample();
