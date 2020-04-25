@@ -2,7 +2,7 @@ package com.tongji.KnowledgeReasoning.entity;
 
 /**
  * @program: 2020-XLab-KnowledgeReasoning
- * @description:
+ * @description: 动态数据
  * @author: 1754060 Zhe Zhang
  * @create: 2020/04/25
  **/

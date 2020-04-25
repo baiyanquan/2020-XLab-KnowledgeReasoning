@@ -1960,18 +1960,3 @@ pod:catalogue-db-99cbcbb88-wl52p
         pod_rel:provides      service:catalogue-db ;
         pod_rel:qosClass      "BestEffort" ;
         pod_rel:startTime     "2019-07-01T10:12:18Z" .
-
-
-# Fresh knowledge [25-04-2020 17:52:13]
-@prefix :      <http://10.60.38.181/> .
-@prefix pod:   <http://10.60.38.181/pod/> .
-@prefix pod_rel: <http://10.60.38.181/pod_rel/> .
-
-pod:hook-demo1  a          :Pod ;
-        pod_rel:contains   container:front-end ;
-        pod_rel:deploy_in  server:192.168.199.32 ;
-        pod_rel:endTime    "9999-99-01T10:12:18Z" ;
-        pod_rel:name       "hook-demo1" ;
-        pod_rel:phase      "running" ;
-        pod_rel:provides   service:front-end ;
-        pod_rel:startTime  "9999-99-01T10:12:18Z" .
